@@ -5,11 +5,11 @@
 int main()
 {
 	char src[100] = "the cake is a lie !\0I'm hidden lol\r\n";
-	char dest[10] = "asdfghh";
+	//char dest[10] = "asdfghh";
 
-	size_t n = ft_strlcat(dest, src, 100);	
-	printf("%zu\n", n);
-	printf("%s\n", dest);
+	char *n = NULL;
+	n = ft_strrchr(src, 'a');	
+	printf("%s\n", n);
 
 	int i = 0;
 	while (i < 20)

@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vjacks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/04 18:45:25 by vjacks            #+#    #+#             */
-/*   Updated: 2018/12/04 21:12:45 by vjacks           ###   ########.fr       */
+/*   Created: 2018/12/04 21:13:04 by vjacks            #+#    #+#             */
+/*   Updated: 2018/12/04 21:38:29 by vjacks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *s1, const char *s2, size_t size)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t s1_len;
-	size_t s2_len;
-	size_t j;
+	int		i;
+	char	*t;
 
-	s1_len = (size_t)ft_strlen(s1);
-	s2_len = (size_t)ft_strlen(s2);
-	j = 0;
-	if (s1_len > size)
-		return (s1_len + (size_t)ft_strlen(s2));
-	while (s2[j] != '\0')
+	i = 0;
+	while (s[i] != '\0')
 	{
-		s1[s1_len + j] = s2[j];
-		j++;
+		if (s[i] == (char)c)
+			t = (char *)(s + i);
+		i++;
 	}
-	s1[s1_len + j] = '\0';
-	return (s1_len + s2_len);
+	if (*t == (char)c)
+		return (t);
+	return (NULL);
 }
