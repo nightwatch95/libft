@@ -4,18 +4,25 @@
 
 int main()
 {
-	char src[100] = "the cake is a lie !\0I'm hidden lol\r\n";
-	//char dest[10] = "asdfghh";
+	char src[100] = "hglhbjhb hjb erverber    ";
+//	char dest[10] = "11111asdf";
 
-	char *n = NULL;
-	n = ft_strrchr(src, 'a');	
-	printf("%s\n", n);
+	char **n = ft_strsplit(src, ' ');
 
-	int i = 0;
-	while (i < 20)
-	{
-//		printf("%c", str[i]);
-		i++;
-	}
+	//printf("%s\n", n);
+	
+	 int i = 0;
+	 while (n[i])
+	 {
+	 	printf("%s\n", n[i]);
+	 	i++;
+	 }
+
+	// i = 0;
+	// while (i < 4)
+	// {
+	// 	printf("%s\n", n[i]);
+	// }
+
 	return 0;
 }

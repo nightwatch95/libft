@@ -6,7 +6,7 @@
 /*   By: vjacks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 18:45:25 by vjacks            #+#    #+#             */
-/*   Updated: 2018/12/04 21:12:45 by vjacks           ###   ########.fr       */
+/*   Updated: 2018/12/05 16:52:34 by vjacks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ size_t	ft_strlcat(char *s1, const char *s2, size_t size)
 	size_t s2_len;
 	size_t j;
 
-	s1_len = (size_t)ft_strlen(s1);
-	s2_len = (size_t)ft_strlen(s2);
+	s1_len = ft_strlen(s1);
+	s2_len = ft_strlen(s2);
 	j = 0;
 	if (s1_len > size)
-		return (s1_len + (size_t)ft_strlen(s2));
-	while (s2[j] != '\0')
+		return (size + ft_strlen(s2));
+	while (s2[j] != '\0' && s1_len + j < size - 1)
 	{
 		s1[s1_len + j] = s2[j];
 		j++;
