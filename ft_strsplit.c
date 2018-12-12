@@ -6,7 +6,7 @@
 /*   By: vjacks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/07 17:36:20 by vjacks            #+#    #+#             */
-/*   Updated: 2018/12/08 21:03:29 by vjacks           ###   ########.fr       */
+/*   Updated: 2018/12/12 21:18:45 by vjacks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static char	**get_array_str(char **buf, const char *s, char c, size_t w)
 	size_t j;
 
 	j = 0;
-	buf[w] = NULL;
 	while (*s != '\0' && j < w)
 	{
 		if (*s == c)
@@ -30,7 +29,8 @@ static char	**get_array_str(char **buf, const char *s, char c, size_t w)
 				i++;
 			if (!(buf[j] = ft_strnew(i)))
 			{
-				free_arr_str(buf, j);
+				buf[j] = NULL;
+				free_arr_str(buf);
 				return (NULL);
 			}
 			ft_strncpy(buf[j], s, i);
@@ -53,6 +53,7 @@ char		**ft_strsplit(char const *s, char c)
 	if ((buf = (char **)malloc((words + 1) * sizeof(char *))))
 	{
 		buf = get_array_str(buf, s, c, words);
+		buf[words] = NULL;
 	}
 	return (buf);
 }

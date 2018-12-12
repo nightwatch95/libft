@@ -1,18 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   list_pushback.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vjacks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/30 21:38:14 by vjacks            #+#    #+#             */
-/*   Updated: 2018/12/12 19:37:03 by vjacks           ###   ########.fr       */
+/*   Created: 2018/12/12 17:42:57 by vjacks            #+#    #+#             */
+/*   Updated: 2018/12/12 21:41:20 by vjacks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	list_pushback(t_list **list, t_list *item)
 {
-	return (c >= 32 && c <= 126);
+	t_list *cur;
+
+	if (!list)
+		return ;
+	if (!(*list))
+	{
+		*list = item;
+		return ;
+	}
+	cur = *list;
+	while (cur->next)
+		cur = cur->next;
+	cur->next = item;
 }

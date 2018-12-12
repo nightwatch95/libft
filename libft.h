@@ -89,5 +89,6 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					count_chars_num(int n);
 char				*fill_itoa(char *res, int n);
 size_t				count_words(char const *s, char c);
-void				free_arr_str(char **buf, size_t w);
+void				free_arr_str(char **buf);
+void				list_pushback(t_list **list, t_list *item);
 #endif
