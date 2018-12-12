@@ -6,20 +6,20 @@
 /*   By: vjacks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 17:16:05 by vjacks            #+#    #+#             */
-/*   Updated: 2018/12/07 22:20:46 by vjacks           ###   ########.fr       */
+/*   Updated: 2018/12/10 21:24:12 by vjacks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		is_whitespace(char c)
+static int	is_whitespace(char c)
 {
 	if (c == ' ' || c == '\n' || c == '\t')
 		return (1);
 	return (0);
 }
 
-char	*ft_strtrim(char const *s)
+char		*ft_strtrim(char const *s)
 {
 	char	*new;
 	int		i;
