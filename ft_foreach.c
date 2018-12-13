@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_arr_str.c                                     :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vjacks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/10 21:20:26 by vjacks            #+#    #+#             */
-/*   Updated: 2018/12/12 19:49:08 by vjacks           ###   ########.fr       */
+/*   Created: 2018/11/22 22:19:27 by vjacks            #+#    #+#             */
+/*   Updated: 2018/12/13 18:52:17 by vjacks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	free_arr_str(char **buf)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	size_t	i;
+	int i;
 
 	i = 0;
-	while (buf[i])
+	while (i < length)
 	{
-		free(buf[i]);
+		f(tab[i]);
 		i++;
 	}
-	free(buf);
 }

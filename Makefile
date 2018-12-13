@@ -36,8 +36,8 @@ FUNC_2 = 	ft_memalloc.c 		ft_memdel.c 	ft_strnew.c 	\
 FUNC_BONUS = ft_lstnew.c 		ft_lstdelone.c 	ft_lstdel.c 	\
 			 ft_lstadd.c 		ft_lstiter.c 	ft_lstmap.c
 
-FUNC_ADD = 	count_chars_num.c 	fill_itoa.c 	list_pushback.c \
-			count_words.c 		free_arr_str.c
+FUNC_ADD = 	get_num_categories.c 	ft_count_if.c 	list_pushback.c \
+			is_whitespace.c 		ft_foreach.c
 
 all: $(NAME)
 

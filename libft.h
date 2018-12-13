@@ -6,7 +6,7 @@
 /*   By: vjacks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 14:52:43 by vjacks            #+#    #+#             */
-/*   Updated: 2018/12/12 16:05:24 by vjacks           ###   ########.fr       */
+/*   Updated: 2018/12/13 19:09:42 by vjacks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,9 +86,10 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
-int					count_chars_num(int n);
-char				*fill_itoa(char *res, int n);
-size_t				count_words(char const *s, char c);
-void				free_arr_str(char **buf);
+int					get_num_categories(int n);
 void				list_pushback(t_list **list, t_list *item);
+int					ft_count_if(char **tab, int (*f)(char*));
+void				ft_foreach(int *tab, int length, void (*f)(int));
+int					is_whitespace(char c);
+
 #endif

@@ -6,13 +6,13 @@
 /*   By: vjacks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 22:12:08 by vjacks            #+#    #+#             */
-/*   Updated: 2018/12/10 16:34:17 by vjacks           ###   ########.fr       */
+/*   Updated: 2018/12/13 20:07:26 by vjacks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	is_whitespace(int *i, const char *str)
+static void	is_space(int *i, const char *str)
 {
 	while ((str[*i] == '\n') || (str[*i] == '\t') || (str[*i] == '\v') ||
 		(str[*i] == ' ') || (str[*i] == '\f') || (str[*i] == '\r'))
@@ -28,7 +28,7 @@ int			ft_atoi(const char *str)
 	i = 0;
 	negative = 0;
 	res = 0;
-	is_whitespace(&i, str);
+	is_space(&i, str);
 	if (str[i] == '-')
 		negative = 1;
 	if (str[i] == '-' || str[i] == '+')

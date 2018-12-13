@@ -12,12 +12,35 @@
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+static char	*fill_itoa(char *res, int n)
+{
+	if (n == -2147483648)
+		return (ft_strcpy(res, "-2147483648"));
+	if (n < 0)
+	{
+		n *= -1;
+		*res++ = '-';
+	}
+	if (n > 9)
+	{
+		res = fill_itoa(res, n / 10);
+		*res = n % 10 + '0';
+		return (res + 1);
+	}
+	else
+	{
+		*res = n + '0';
+		return (res + 1);
+	}
+	return (res);
+}
+
+char		*ft_itoa(int n)
 {
 	int		size;
 	char	*res;
 
-	size = count_chars_num(n);
+	size = get_num_categories(n);
 	res = NULL;
 	if ((res = ft_strnew(size)))
 	{

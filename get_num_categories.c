@@ -6,13 +6,13 @@
 /*   By: vjacks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 21:06:50 by vjacks            #+#    #+#             */
-/*   Updated: 2018/12/10 21:08:28 by vjacks           ###   ########.fr       */
+/*   Updated: 2018/12/13 17:47:03 by vjacks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_chars_num(int n)
+int	get_num_categories(int n)
 {
 	int size;
 

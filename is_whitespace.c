@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_words.c                                      :+:      :+:    :+:   */
+/*   is_whitespace.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vjacks <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/10 21:18:46 by vjacks            #+#    #+#             */
-/*   Updated: 2018/12/12 22:06:10 by vjacks           ###   ########.fr       */
+/*   Created: 2018/12/13 18:45:14 by vjacks            #+#    #+#             */
+/*   Updated: 2018/12/13 18:51:39 by vjacks           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_words(char const *s, char c)
+int	is_whitespace(char c)
 {
-	size_t words;
-
-	words = 0;
-	while (s && *s != '\0')
-	{
-		if (*s == c)
-			s++;
-		else
-		{
-			words++;
-			while (*s != c && *s)
-				s++;
-		}
-	}
-	return (words);
+	if (c == '\n' || c == '\t' || c == '\v' ||
+		c == ' ' || c == '\f' || c == '\r')
+		return (1);
+	return (0);
 }
